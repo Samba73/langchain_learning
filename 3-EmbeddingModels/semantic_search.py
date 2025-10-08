@@ -17,14 +17,15 @@ documents = [
     "Anil Kumble is a former Indian cricketer and one of the greatest leg-spinners in the history of cricket.",
     "Jasprit Bumrah is an Indian cricketer known for his unique bowling action and ability to bowl yorkers at will."
 ]
-query = "Who is Jasprit Bumrah?"
+query = "Tell me about Sachin Tendulkar."
 
 doc_embeddings = embedding.embed_documents(documents)
 
 query_embedding = embedding.embed_query(query)
-print(f"doc embdeddings value: {doc_embeddings[5]}")
-similarities = cosine_similarity([query_embedding], doc_embeddings)
-print(f"Similarities: {similarities}")
+# print(f"doc embdeddings value: {doc_embeddings[5]}")
+similarities = cosine_similarity([query_embedding], doc_embeddings)[0]
+index, value = sorted(list(enumerate(similarities)), key=lambda x: x[1], reverse=True)[0]
+print(f"Value is : {documents[index]}")
 most_similar_doc_index = np.argmax(similarities)
 print(f"Most Similar doc index: {most_similar_doc_index}")
 print("Most similar document:", documents[most_similar_doc_index])
