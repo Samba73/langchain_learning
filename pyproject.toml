@@ -1,0 +1,18 @@
+[project]
+name = "langchain-learning"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "huggingface-hub>=0.35.3",
+    "langchain>=0.3.27",
+    "langchain-core>=0.3.78",
+    "langchain-google-genai>=2.1.12",
+    "langchain-huggingface>=0.3.1",
+    "langchain-ollama>=0.3.10",
+    "numpy>=2.3.3",
+    "python-dotenv>=1.1.1",
+    "scikit-learn>=1.7.2",
+    "transformers>=4.57.0",
+]
